@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Copilot API
+Bundle-SymbolicName: com.copilotapi
+Bundle-Version: 1.0.0
+Bundle-Activator: com.copilotapi.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Export-Package: com.copilotapi.handlers,
+ com.copilotapi.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
