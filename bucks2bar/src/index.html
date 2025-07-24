@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bucks2Bar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/styles.css" rel="stylesheet">
+    <!-- Bootstrap Icons CDN (for moon/sun icons) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar" style="background-color: #23272b;">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <span class="navbar-brand mb-0 h1 text-light" style="font-size: 2.5rem;">Bucks2Bar</span>
+            <div class="d-flex align-items-center ms-auto">
+                <button id="toggleTheme" class="btn btn-outline-light" type="button" aria-label="Theme wechseln">
+                    <span id="themeIcon" class="bi bi-moon"></span>
+                </button>
+                <div class="position-relative ms-2">
+                    <button id="loginBtn" class="btn btn-outline-light" type="button">Login</button>
+                    <div id="loginPopover" class="position-absolute end-0 mt-2 p-3 bg-white border rounded shadow" style="min-width: 220px; display: none; z-index: 1050;">
+                        <input type="text" id="loginInput" class="form-control" placeholder="Benutzername">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <h1 class="text-center">Bucks2Bar</h1>
+        <!-- Bootstrap Tabs -->
+        <ul class="nav nav-tabs" id="mainTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="data-tab" data-bs-toggle="tab" data-bs-target="#data" type="button" role="tab" aria-controls="data" aria-selected="true">Daten</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="chart-tab" data-bs-toggle="tab" data-bs-target="#chart" type="button" role="tab" aria-controls="chart" aria-selected="false">Diagramm</button>
+            </li>
+        </ul>
+        <div class="tab-content p-3 border border-top-0 bg-light" id="mainTabContent">
+            <div class="tab-pane fade show active" id="data" role="tabpanel" aria-labelledby="data-tab">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <label class="form-label fw-bold">Januar</label>
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">Einkommen</span>
+                                    <input type="number" class="form-control" id="income-january">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">Ausgaben</span>
+                                    <input type="number" class="form-control" id="expenses-january">
+                                </div>
+                            </div>
+                        </div>
+                        <label class="form-label fw-bold">Februar</label>
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">Einkommen</span>
+                                    <input type="number" class="form-control" id="income-february">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">Ausgaben</span>
+                                    <input type="number" class="form-control" id="expenses-february">
+                                </div>
+                            </div>
+                        </div>
+                        <label class="form-label fw-bold">März</label>
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">Einkommen</span>
+                                    <input type="number" class="form-control" id="income-march">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">Ausgaben</span>
+                                    <input type="number" class="form-control" id="expenses-march">
+                                </div>
+                            </div>
+                        </div>
+                        <label class="form-label fw-bold">April</label>
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">Einkommen</span>
+                                    <input type="number" class="form-control" id="income-april">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">Ausgaben</span>
+                                    <input type="number" class="form-control" id="expenses-april">
+                                </div>
+                            </div>
+                        </div>
+                        <label class="form-label fw-bold">Mai</label>
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">Einkommen</span>
+                                    <input type="number" class="form-control" id="income-may">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">Ausgaben</span>
+                                    <input type="number" class="form-control" id="expenses-may">
+                                </div>
+                            </div>
+                        </div>
+                        <label class="form-label fw-bold">Juni</label>
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">Einkommen</span>
+                                    <input type="number" class="form-control" id="income-june">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">Ausgaben</span>
+                                    <input type="number" class="form-control" id="expenses-june">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label class="form-label fw-bold">Juli</label>
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">Einkommen</span>
+                                    <input type="number" class="form-control" id="income-july">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">Ausgaben</span>
+                                    <input type="number" class="form-control" id="expenses-july">
+                                </div>
+                            </div>
+                        </div>
+                        <label class="form-label fw-bold">August</label>
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">Einkommen</span>
+                                    <input type="number" class="form-control" id="income-august">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">Ausgaben</span>
+                                    <input type="number" class="form-control" id="expenses-august">
+                                </div>
+                            </div>
+                        </div>
+                        <label class="form-label fw-bold">September</label>
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">Einkommen</span>
+                                    <input type="number" class="form-control" id="income-september">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">Ausgaben</span>
+                                    <input type="number" class="form-control" id="expenses-september">
+                                </div>
+                            </div>
+                        </div>
+                        <label class="form-label fw-bold">Oktober</label>
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">Einkommen</span>
+                                    <input type="number" class="form-control" id="income-october">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">Ausgaben</span>
+                                    <input type="number" class="form-control" id="expenses-october">
+                                </div>
+                            </div>
+                        </div>
+                        <label class="form-label fw-bold">November</label>
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">Einkommen</span>
+                                    <input type="number" class="form-control" id="income-november">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">Ausgaben</span>
+                                    <input type="number" class="form-control" id="expenses-november">
+                                </div>
+                            </div>
+                        </div>
+                        <label class="form-label fw-bold">Dezember</label>
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">Einkommen</span>
+                                    <input type="number" class="form-control" id="income-december">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">Ausgaben</span>
+                                    <input type="number" class="form-control" id="expenses-december">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="chart" role="tabpanel" aria-labelledby="chart-tab">
+                <div class="w-100 overflow-auto" style="min-height: 380px;">
+                    <div style="min-width: 650px;">
+                        <canvas id="barChart" style="width:100%;height:350px;max-width:1200px;"></canvas>
+                    </div>
+                    <!-- A plain bootstrap button with the label download -->
+                    <div class="text-center mt-2">
+                        <button id="downloadChart" class="btn btn-outline-dark">Diagramm herunterladen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
